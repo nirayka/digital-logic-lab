@@ -27,19 +27,15 @@ public class LogicGates {
     }
 
     public static void circuitOne(int a, int b) {
-        int finalOutput = -1;
         int output1 = and(not(a), b);
         int output2 = and(a, not(b));
-        finalOutput = or(output1, output2);
+        int finalOutput = or(output1, output2);
         System.out.println("The result of simulating circuit one is " + finalOutput + ".");
     }
 
     public static void circuitTwo(int a, int b) {
-        int s = -1;
-        int c = -1;
-        int output = -1;
-        s = xor(a, b);
-        c = and(a, b);
+        int s = xor(a, b);
+        int c = and(a, b);
         System.out.println("The result of simulating circuit two is " + s + " and " + c + ".");
     }
 
