@@ -5,23 +5,25 @@ public class LogicGates {
     public static void main(String[] args) {
         int a;
         int b;
-        System.out.print("Enter 1 or 0 to simulate this logic gate. \n");
+        System.out.println("Enter 1 or 0 to simulate the circuits.");
         Scanner scanner = new Scanner(System.in);
         String inputtedNumberA = scanner.nextLine();
         a = Integer.parseInt(inputtedNumberA);
         while (a != 0 && a != 1) {
-            System.out.print("Please enter either 1 or 0.");
+            System.out.println("Please enter either 1 or 0.");
             inputtedNumberA = scanner.nextLine();
             a = Integer.parseInt(inputtedNumberA);
         }
-        System.out.print("Enter another 1 or 0 to simulate this logic gate. \n");
+        System.out.println("Enter another 1 or 0 to simulate the circuits.");
         String inputtedNumberB = scanner.nextLine();
         b = Integer.parseInt(inputtedNumberB);
         while (b != 0 && b != 1) {
-            System.out.print("Please enter either 1 or 0.");
+            System.out.println("Please enter either 1 or 0.");
             inputtedNumberB = scanner.nextLine();
             b = Integer.parseInt(inputtedNumberB);
         }
+        circuitOne(a, b);
+        circuitTwo(a, b);
     }
 
     public static void circuitOne(int a, int b) {
@@ -29,7 +31,7 @@ public class LogicGates {
         int output1 = and(not(a), b);
         int output2 = and(a, not(b));
         finalOutput = or(output1, output2);
-        System.out.print(finalOutput);
+        System.out.println("The result of simulating circuit one is " + finalOutput + ".");
     }
 
     public static void circuitTwo(int a, int b) {
@@ -38,7 +40,7 @@ public class LogicGates {
         int output = -1;
         s = xor(a, b);
         c = and(a, b);
-        System.out.print(s + " " + c);
+        System.out.println("The result of simulating circuit two is " + s + " and " + c + ".");
     }
 
     public static int not(int c) {
